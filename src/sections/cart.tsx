@@ -11,6 +11,9 @@ import {
     useColorMode,
     useColorModeValue,
 } from "@chakra-ui/react";
+
+import CartRow from "../components/cart_row";
+
 const Cart = () => {
     const { toggleColorMode } = useColorMode();
     const bgColor = useColorModeValue("gray.50", "whiteAlpha.50");
@@ -50,23 +53,11 @@ const Cart = () => {
             </Stack>
         </HStack>
         <VStack spacing={4} alignItems="stretch" w="full">
-            <HStack justifyContent="space-between">
-                <Text color={ secondaryColor }>Subtotal</Text>
-                <Heading size="sm">$119.00</Heading>
-            </HStack>
-            <HStack justifyContent="space-between">
-                <Text color={ secondaryColor }>Shipping</Text>
-                <Heading size="sm">$19.99</Heading>
-            </HStack>
-            <HStack justifyContent="space-between">
-                <Text color={ secondaryColor }>Taxes (estimated)</Text>
-                <Heading size="sm">$23.80</Heading>
-            </HStack>
-            <Divider />
-            <HStack justifyContent="space-between">
-                <Text color={ secondaryColor }>Total</Text>
-                <Heading size="lg">$162.79</Heading>
-            </HStack>
+            <CartRow textColor={ secondaryColor } text='Subtotal' textValue='$119.00'/>
+            <CartRow textColor={ secondaryColor } text='Shipping' textValue='$19.99'/>
+            <CartRow textColor={ secondaryColor } text='Taxes (estimated)' textValue='$23.80'/>
+            <Divider/>
+            <CartRow textColor={ secondaryColor } text='Total' textValue='$162.79' size='md'/>
         </VStack>
     </VStack>
 }

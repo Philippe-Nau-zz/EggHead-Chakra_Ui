@@ -12,6 +12,8 @@ import { FormControl,
      useBreakpointValue,
  } from "@chakra-ui/react";
 
+ import DetailInput from "../components/detail_input";
+
 const Details = () => {
     const  colSpan = useBreakpointValue({base: 2, md: 1});
     return <VStack w="full"
@@ -25,38 +27,10 @@ const Details = () => {
             <Text>If you already have an account, click here to log in.</Text>
         </VStack>
         <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-            <GridItem colSpan={colSpan}>
-                <FormControl>
-                    <FormLabel>
-                        First Name
-                    </FormLabel>
-                    <Input placeholder="John"/>
-                </FormControl>
-            </GridItem>
-            <GridItem colSpan={colSpan}>
-                <FormControl>
-                    <FormLabel>
-                        Last Name
-                    </FormLabel>
-                    <Input placeholder="Doe"/>
-                </FormControl>
-            </GridItem>
-            <GridItem colSpan={2}>
-                <FormControl>
-                    <FormLabel>
-                        Address
-                    </FormLabel>
-                    <Input placeholder="Bivd. Broken Dreams 21"/>
-                </FormControl>
-            </GridItem>
-            <GridItem colSpan={colSpan}>
-                <FormControl>
-                    <FormLabel>
-                        City
-                    </FormLabel>
-                    <Input placeholder="San Francisco"/>
-                </FormControl>
-            </GridItem>
+            <DetailInput label='First Name' placeholder='John' col= {colSpan}/>
+            <DetailInput label='Last Name' placeholder='Doe' col= {colSpan}/>                
+            <DetailInput label='Address' placeholder='Bivd. Broken Dreams 21' col= {2}/>
+            <DetailInput label='City' placeholder='San Francisco' col= {colSpan}/>
             <GridItem colSpan={colSpan}>
                 <FormControl>
                     <FormLabel>
